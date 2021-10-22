@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    height: 100vh;
+    background: rgb(175,103,233);
+    background: linear-gradient(180deg, rgba(175,103,233,1) 0%, rgba(101,101,231,1) 100%);
+}
+
+.faq {
+    position: relative;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: hsl(237, 12%, 33%);
+}
+
+h2 {
+    font-size: .9rem;
+    font-weight: normal;
+}
+
+label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    padding-right: 30px;
+    color: hsl(240, 6%, 50%);
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height:1rem;
+    top: 35%;
+    right: 10px;
+    background-image: url("../images/icon-arrow-down.svg");
+    background-size: .6rem;
+    background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:checked ~ h2 label::before {
+    transform: rotate(180deg);
+    top: -20%;
+    right: 15px;
+}
+
+input[type="checkbox"]:checked ~ h2 label {
+    color: hsl(237, 12%, 33%);
+    font-weight: bold;
+}
+
+p {
+    max-height: 0;
+    overflow: hidden;
+    color: hsl(240, 6%, 50%);
+    transition: max-height 0.4s ease;
+    padding-right: 30px;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+input[type="checkbox"]:checked ~ h2 ~ p {
+    max-height: 80px;
+    padding-bottom: 20px;
+}
+
+.card {
+    padding: 25px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-header{
+    position: relative;
+    height: 100px;
+    width: 240px;
+    bottom: 10px;
+}
+
+.card-body {
+    background: white;
+    padding: 105px 18px 40px 18px;
+    border-radius: 16px;
+    -webkit-box-shadow: 0 5px 29px 0 rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0 5px 29px 0 rgba(66, 68, 90, 1);
+    box-shadow: 0 5px 29px 0 rgba(66, 68, 90, 1);
+}
+
+.top {
+    background-image: url("../images/illustration-woman-online-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 266px;
+    height: 196px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.bottom {
+    background-image: url("../images/bg-pattern-mobile.svg");
+    height: 104px;
+    width: 240px;
+    position: absolute;
+    right: 0;
+    top: 105%;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .card {
+        flex-direction: row;
+        align-items: stretch;
+        max-width: 1100px;
+        margin: 0 80px;
+
+        background-color: white;
+        border-radius: 16px;
+        padding: 0;
+
+        -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    }
+
+    .card-body {
+        max-width: 50%;
+        background-color: transparent;
+        padding-top: 50px;
+        padding-bottom: 80px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .faq {
+        padding-right: 15%;
+        font-size: 1rem;
+    }
+
+    .card-header {
+        display: flex;
+        bottom: 0;
+        align-content: stretch;
+        height: auto;
+        flex: 1;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .top {
+        background-image: url("../images/illustration-woman-online-desktop.svg");
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-size: 100%;
+        background-position: center;
+        left: -17%;
+    }
+
+    .box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -56%;
+        bottom: -9%;
+        z-index: 100;
+
+        background-image: url("../images/illustration-box-desktop.svg");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .bottom {
+        background-image: url("../images/bg-pattern-desktop.svg");
+        width: 180%;
+        height: 180%;
+        position: absolute;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        top: -57%;
+        left: -95%;
+        background-position: center;
+    }
+}
